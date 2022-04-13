@@ -1,0 +1,320 @@
+Python for Beginners from Zero - EP.1
+----------------------------------------------------------------------
+ติดตั้ง python
+	- python.org
+		Download
+		- กดติ๊กถูก Add Python 3.10 to PATH
+		- กด Customize installation
+		- กด Next
+		- แก้ตำแหน่งไฟล์ เป็น C:\Python310 จากนั้น Install
+
+เปิด idle Shell
+	- print('Hello world')
+	- print("Sinyapong Naja")
+
+python คืออะไร
+	- ภาษาคอมพิวเตอร์ที่ใช้เขียนโปรแกรม คิดค้นโดย Guido van Rossum เริ่มใช้ ปี ค.ศ.1990 เนเธอแลนด์
+	- เปิดให้ใช้ฟรี Open Source สามารถใช้ได้ใน Windows, Mac, Linux
+
+turtal >>> real python turtle
+	import turtle
+	tao = turtle.Pen() ---> แทนที่ด้วย tao
+	tao.shape('turtle')---> เปลี่ยน shape เป็นรูปเต่า
+	tao.forward(100) ---> เดินหน้า
+	tao.left(90)
+	tao.right(90)
+	tao.penup()
+	tao.pendown()
+	tao.circle(60)
+----------------------------------------------------------------------
+Python for Beginners from Zero - EP.2
+----------------------------------------------------------------------
+EP นี้ลุงจะแนะนำพื้นฐาน Python เบื้องต้นที่จำเป็น
+		- ตัวแปร
+		- str, int, float,
+		- operator + - * / // % **
+		- for loop เบื้องต้น
+		- พื้นฐาน function
+		- ประยุกต์เนื้อหากับ turtle
+
+ตัวแปรเอาไว้สำหรับเก็บค่าลงไป มีเก็บได้หลายชนิด
+		- string  	เก็บค่าเป็นตัวหนังสือ
+		- int		เก็บค่าเป็นตัวเลขจำนวนเต็ม 
+		- float		เก็บค่าเป็นตัวเลขทศนิยม
+	- operator + - * / // %
+		+	บวก
+		-	ลบ
+		*	คูณ
+		/	หาร
+		//	หารปัดเศษ
+		%_ 	หารเอาแต่เศษ
+		**	ยกกำลัง
+	- for loop	การทำงานวนลูปของโปรแกรม
+	- พื้นฐาน function	ชุด code เอาไว้สำหรับทำงานที่ซ้ำๆ
+
+ตัวแปร String  ตัวหนังสือ ต้องมี ' ' คล่อมตัวหนังสือไว้
+การใช้ .format
+	name = 'Uncle'
+	lastname = 'Engineer'
+	fullname = name + '  ' + lastname
+	print(fullname)
+		Uncle  Engineer
+
+	fullname = 'My name is {} {} '.format(name, lastname)
+	print(fullname)
+ 		Uncle Engineer 
+
+	print(f'My name is {name} {lastname}')
+		My name is Uncle Engineer
+
+การเช็ค type ของตัวแปร
+	age = 15
+	grade = 3.5
+	type(age)
+		<class 'int'>
+	type(grade)
+		<class 'float'>
+
+ตัวแปรชนิด float  ทศนิยม
+	print(f' Age is {age} years Grade : {grade:,.2f}')
+ 		Age is 15 years Grade : 3.50
+แปลง float เป็น int
+	int(grade)
+		3
+
+การใช้ loop ทำโปรแกรม
+การใช้งาน for     ## range() การทำตามจำนวน ในวงเล็ก
+	for i in range(5):
+    print(f'ตัวที่ {i}')
+   
+		ตัวที่ 0
+		ตัวที่ 1
+		ตัวที่ 2
+		ตัวที่ 3
+		ตัวที่ 4
+
+การใช้   while true:
+	atk = 5
+	while atk > 0: 
+    		print(f'atk เหลือ {atk} ชิ้น')
+    		atk -= 1
+
+			atk เหลือ 5 ชิ้น
+			atk เหลือ 4 ชิ้น
+			atk เหลือ 3 ชิ้น
+			atk เหลือ 2 ชิ้น
+			atk เหลือ 1 ชิ้น
+	import time
+	time.sleep(0.5) หน่วงเวลาการแสดงผล
+
+
+function คือกล่องสำหรับไว้เก็บคำสั่ง
+	def Hello():
+    		print('Hello')
+
+การใช้งาน function Hello 
+	Hello()
+		Hello
+
+
+	def Sawatdee(name='Frend'):
+    		print(f'Hello {name} how r u')
+
+    
+	Sawatdee('Uncle')
+		Hello Uncle how r u
+	
+การประยุกต์ใช้ function ใช้ร่วมกับ turtle สร้างรูป สี่เหลี่ยม
+	import turtle
+	tao = turtle.Pen()
+	tao.shape('turtle')
+	def Rectangle(z):
+    		for i in range(4):
+        	tao.forward(z)
+        	tao.right(90)
+
+	def Go(x,y):
+    		tao.penup()
+    		tao.goto(x,y)
+    		tao.pendown()
+      
+	Rectangle(150)
+	Go(100,100)
+	Rectangle(100)
+
+----------------------------------------------------------------------
+Python for Beginners from Zero - EP.3
+----------------------------------------------------------------------
+EP นี้มาทำความเข้าใจคอนเซปการตั้งค่าต่างๆที่เกี่ยวข้องกับ Python เช่น Editor ที่ทำให้เขียนโปรแกรมได้ง่ายขึ้น 
+         ตั้งค่า Environment เพื่อให้ติดตั้งแพ็คเกจอื่นๆมาใช้งานได้ 
+
+- การตั้งค่า Environment 
+-   เช็ค version python
+	 cmd >>>> python -V
+
+	-   Edit Environment
+		Edit the system environment variables
+		- Environment Variables/Path/Edit/New/C:\Python310
+
+- การใช้งาน pip เพื่อติดตั้ง package		  
+	cmd >>>> pip -V		เช็ค version pip
+	cmd >>>> cls		เคลียสกรีน
+	cmd >>>> pip list	ดู package ที่ลงไว้เรียบร้อยแล้ว
+
+- ทดลองติดตั้ง package เสริม
+	www.pypi.org				ค้นหา package ของ python
+		pip install PyAutoGUI  		package บังคับเม้า คีย์บอร์ดอัตโนมัต
+		import pyautogui
+		pyautogui.click(500,500)	ตำแหน่งเม้าที่ให้ไป
+		pyautogui.position()		หาตำแหน่งที่เม้าอยู่
+
+
+- การติดตั้งโปรแกรม Editor (VS Code, Sublime Text)	
+	https://vscode.dev/			แก้ไข Code ออนไลน์
+	https://code.visualstudio.com/		visual studio code
+		Extensions
+			python			ทำให้เขียน python ได้
+			material icon theme	ทำให้ icon สวย
+
+	https://www.sublimetext.com/
+		https://github.com/UncleEngineer/Sublime/blob/master/sublime-windows.txt
+		tool/build system/new build system
+		{
+    			"cmd": ["C:/Python310/python.exe", "-u", "$file"],
+    			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+   			 "selector": "source.python",
+    			"env":{"PYTHONIOENCODING":"utf8"}
+		}
+		tool/installpackage/control
+		Preferences/Package Control/install package/Anaconda
+		Preferences/Package setting/anaconda/settings-Default/251 >>>false
+
+- การรัน Python บน cmd
+- รัน Python แบบออนไลน์บน Colab
+- แอพฯมือถือที่รัน Python ได้
+
+----------------------------------------------------------------------
+Python for Beginners from Zero - EP.4
+----------------------------------------------------------------------	
+EP นี้มาทำความเข้าใจคอนเซปพื้นฐาน Python ทั่วไปการเก็บข้อมูลในลิสต์หรือดิกชันนารี การรับค่าจาก user ทั้งแบบใน terminal (CLI) และ GUI
+
+- พื้นฐาน list
+	การตั้งตัวแปร list
+		friend = ['somchai', 'somsuk']
+	การเพิ่มค่าใน list (การเพ่ิ่มต่อท้าย)
+		friend.append('Somsak')
+	การเพิ่มค่าไปใน list ลงไปในตำแหน่งที่เราต้องการ
+		friend.insert[1, 'Sompong']  แทรก Sompong ในตำแหน่ง index ที่ 1
+	การย้ายตำแหน่งใน list  คำสั่ง pop การทำ cut and past  ตัดแล้วนำมาใช้งานใหม่
+		friend.insert(1, friend.pop(3))   cut index 3 มาวางที่ index 1
+	การลบค่าใน list
+		friend.remove('Somchai')
+	การเรียงลำดับ sort
+		friend.sort()
+		friend.sort(reverse=True)  เรียงลำดับย้อนหลัง
+		sort(friend)               การเรียงลำดับชั่วคราว
+	การสลับ หน้า หลัง
+		friend.reverse()
+
+
+- พื้นฐาน Tuple  คือ tupleไม่สามารถแก้ไขได้ ใช้สำหรับค่าคงที่ไม่แก้ไข
+	การสร้างตัวแปร Tuple
+		friend = ('somchai', 'somsuk')
+	สามารถนับได้ count
+		coin = (5,1,3,4,5,6,7,8,5,5)
+		coin.count(5)
+		4
+	สามารถหาค่าได้ index
+		friend.index('somchai')
+		friend[1]
+		friend[-1]
+
+- พื้นฐาน dictionary
+	การสร้างตัวแปร dict
+		vocab = {'cat':'แมว', 'dog':'หมา','pig':['หมู','สุกร']}
+	การเรียกใช้
+		vocab['cat']
+		vocab['pig'][0][0]
+	การเพิ่มค่า
+		vacab['bird'] = 'นก'
+	การเปลี่ยนค่า
+		vacab[2] = 'สุนัข'   เปลี่ยนจากหมา เป็น สุนัข
+	การลบค่า
+		del vacab[2]
+	การแก้ไขคีย์
+		vacab['dog'] = 'dogsss'  เปลี่ยนจาก dog เป็น dogssss
+	การใส่ for loop 
+		for v in vocab:      ได้เฉพาะชื่อคีย์
+			print(v)
+		for v in vocab.keys():   ได้เฉพาะชื่อคีย์
+		for v in vocab.values():  ได้เฉพาะ value
+		for v in vocab.item():     ได้มาทั้งหมด key, value
+	
+
+- User input (CLI)
+	ตัวอย่างการเขียน input CLI
+		friend = []
+		for i in range(5):
+    		data =  input('What your friend name : ')
+    		friend.append(data)
+
+		print(friend)
+
+
+- การ run python ผ่าน CMD / Terminal
+	cmd 
+		cd ลากโฟล์เดอร์ที่เก็บไฟล์ลงมา / พิมพ์ชื่อไฟล์.py
+
+
+-ทดลองติดตั้ง package สำหรับควบคุมเมาส์ คีย์บอร์ด
+	cmd
+		pip install pyautogui       package การบังคับเม้าและคีย์บอร์ดอัตโนมัติ
+		pip list					package ทั้งหมดของ python
+
+	ตัวอย่างการใช้งาน pyvutogui (GUI_mouse.py)
+		from tkinter import *
+		from tkinter import ttk
+		import pyautogui as pg
+		import webbrowser         ####  package การใช้งานลิ้งค์ไปภายนอก
+
+		GUI = Tk()
+		GUI.title('Program Calender')
+		GUI.geometry('500x300')
+
+		def Calender1():
+			pg.click(1885, 1051)
+
+		def Calender2():
+			pg.click(439, 1045)
+
+		def Google():
+			webbrowser.open('https://www.google.com')
+
+		B1 = Button(GUI, text='Calender1', command=Calender1)
+		B1.pack(ipadx=20, ipady=10, pady=20)
+
+		B2 = ttk.Button(GUI, text='Calender2', command=Calender2)
+		B2.pack(ipadx=20, ipady=10, pady=20)
+
+		B3 = ttk.Button(GUI, text='Calender3', command=Google)
+		B3.pack(ipadx=20, ipady=10)
+
+		GUI.mainloop()
+
+
+----------------------------------------------------------------------
+Python for Beginners from Zero - EP.5
+----------------------------------------------------------------------	
+Python for Beginners from Zero - EP.5
+Youtube Private: https://youtu.be/fGvMTmQWrjQ
+
+- แนะนำการสร้าง github.com เพื่อเก็บผลงานตัวเอง
+	github.com     เว็ปไซค์สำหรับเก็บ sort code 
+
+
+
+
+- เขียน Python ส่งไลน์ด้วย Line Notify
+-Python GUI แบบง่ายๆ เขียนโปรแกรมคำนวณ
+-try, except ดักจับ error
+-ฟังชั่นคำนวณคณิตศาสตร์ +, - , *, / , //, **, %
