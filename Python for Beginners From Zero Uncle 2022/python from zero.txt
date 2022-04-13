@@ -310,11 +310,101 @@ Youtube Private: https://youtu.be/fGvMTmQWrjQ
 
 - แนะนำการสร้าง github.com เพื่อเก็บผลงานตัวเอง
 	github.com     เว็ปไซค์สำหรับเก็บ sort code 
+	login sinyapongs@gmail.com (Sinyapong4440)
+	
+	การสร้าง Repisitory  (สร้างที่เก็บโปรแกรมของเรา)
+		new repisitory / ตั้งชื่อ (Basic_Python) / public / add a readme file / create 
 
+	การ Upload
+		Add file / upload file / เลือกไฟล์ /  อธิบายเวอร์ชั่น / commits changes
 
-
+	การ fork   คือการ copy programs ของคนอื่นมาเป็นของเรา 
+		เลือกโปรแกรมที่เราต้องการ แล้วกด fork และตั้งชื่อของเรา
+		
 
 - เขียน Python ส่งไลน์ด้วย Line Notify
+	pip install songline
+	การออก token
+		line notify  เข้าเว็ปไซค์
+		เข้าระบบไลน์
+		profile / my place / create token / compy / 
+		add friend line notify ในกลุ่มก่อน
+
+	คำสั่งการใช้ส่งไลน์
+		from songline import Sendline
+		token = 'HdAOGiFcmQovCRP7KYwsdZi2eYJTs6PH6kV3s8Q2GQO'
+		messenger = Sendline(token)
+		messenger.sendtext('Hello World')
+	การส่ง สติ๊กเกอร์
+		https://uncle-engineer.com/api/sticker.pdf
+		messenger.sticker(1,1)
+	การส่งรูปภาพ
+		หารูปภาพ .jpg, .png
+		messenger.sendimage('https://picturetoyou.com/wp-content/uploads/2021/11/57.jpg')
+
+	ตัวอย่าง Code
+		from songline import Sendline
+
+		token = 'HdAOGiFcmQovCRP7KYwsdZi2eYJTs6PH6kV3s8Q2GQO'
+		messenger = Sendline(token)
+		messenger.sendtext('Hello World')
+		messenger.sticker(1,1)
+		messenger.sendimage('https://picturetoyou.com/wp-content/uploads/2021/11/57.jpg')
+
+-ฟังชั่นคำนวณคณิตศาสตร์ 
+	+, - , *, / , //, **, %
+	// หารปัดเศษ
+	** เลขยกกำลัง
+	%  หารเอาเศษ
+	import math    ฟังชั่นคำนวณคณิตศาสตร์
+		sqrt / pi 
+
+
 -Python GUI แบบง่ายๆ เขียนโปรแกรมคำนวณ
 -try, except ดักจับ error
--ฟังชั่นคำนวณคณิตศาสตร์ +, - , *, / , //, **, %
+	(GUI_Calculater.py)
+		from tkinter import *
+		from tkinter import ttk
+		from tkinter import font
+		from tkinter import messagebox
+
+		GUI = Tk()
+		GUI.title('Program Calculater') ### ชื่อโปรแกรม
+
+		GUI.geometry('500x700')         ### ขนาดหน้าจอโปรแกรม
+
+		### iconarchive  การใส่รูปภาพ
+		bg = PhotoImage(file='images/Cars.png')   ### เก็บปภาพ
+		BG = Label(GUI, image=bg)  
+		BG.pack()              ### แสดงรูปภาพ
+
+		L = Label(GUI, text="กรุณากรอกจำนวนปลา(กิโลกรัม)", font=(None, 20))
+		L.pack()  ## ป้ายแสดงชื่อ
+
+
+		v_quantity = StringVar()  ## สร้างตัวแปรเป็นตัวหนังสือ
+		E1 = ttk.Entry(GUI, textvariable=v_quantity, font=(None, 20)) ### ช่องกรอกข้อมูล
+		E1.pack()
+
+		#### function
+		def Cal():
+			try:
+				quan = float(v_quantity.get())
+				price = 30
+				calc = quan * price
+				messagebox.showinfo('รวมราคาทั้งหมด', f'ราคาปลาทั้งหมด {calc:.2f} บาท')
+				v_quantity.set('')
+			except:
+				messagebox.showwarning('กรอกจำนวนผิด','กรุณากรอกเฉพาะตัวเลขเท่านั้น')
+				v_quantity.set('')
+
+		B1 = ttk.Button(GUI, text="Calculate", command=Cal)
+		B1.pack(ipadx=20, ipady=20)  ### ipadx , ipady ขยายความกว้างภายในปุ่ม
+
+
+		GUI.mainloop()   ## เพื่อให้โปรแกรมทำงานตอลดเวลา
+
+
+
+		
+
