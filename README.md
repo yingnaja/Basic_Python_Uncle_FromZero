@@ -1,0 +1,2 @@
+# Basic_Python_Uncle_FromZero
+เรียน BasicBasic_Python_Uncle_FromZero_2022
